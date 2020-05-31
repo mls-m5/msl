@@ -1,0 +1,12 @@
+
+*.cflags
+*.config
+*.creator
+*.creator.user
+*.cxxflags
+*.files
+*.includes
+
+// Build files
+*.d
+*.o

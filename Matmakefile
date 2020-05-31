@@ -1,0 +1,9 @@
+# Matmake file
+# https://github.com/mls-m5/matmake
+
+config += c++14 Wall
+
+msl.public_includes += include
+
+dependency test
+

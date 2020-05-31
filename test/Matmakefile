@@ -1,0 +1,6 @@
+
+config += debug
+
+includes += ../include
+
+basic_test.src = basic_test.cpp
