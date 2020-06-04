@@ -1,6 +1,7 @@
 
 config += debug
 
-includes += ../include
+includes += ../include .
 
-basic_test.src = basic_test.cpp
+not_null_unique_ptr_test.src = %.cpp
+range_test.src = %.cpp

@@ -4,7 +4,7 @@
 
 using namespace msl;
 
-TEST_SUIT_BEGIN("basic-test")
+TEST_SUIT_BEGIN
 
 TEST_CASE("throw when null") {
     auto ptr1 = std::unique_ptr<int>();
