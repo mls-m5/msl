@@ -31,7 +31,7 @@ public:
             return value < other.value;
         }
 
-        T operator*() {
+        constexpr T operator*() {
             return value;
         }
     };
