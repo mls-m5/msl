@@ -46,7 +46,7 @@ namespace std {
 
 template <class T>
 constexpr std::unique_ptr<T> &&move(msl::not_null_unique_ptr<T> &ptr) {
-    std::move(ptr);
+    return std::move(ptr);
 }
 
 } // namespace std
