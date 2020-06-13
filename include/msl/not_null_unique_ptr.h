@@ -20,7 +20,7 @@ class not_null_unique_ptr {
     std::unique_ptr<T> _ptr;
 
     void assertNotNull() {
-        if (!_ptr) {
+        if (_ptr == nullptr) {
             throw std::invalid_argument("pointer is null when it shouldnt");
         }
     }
@@ -44,9 +44,11 @@ public:
 
 namespace std {
 
-template <class T>
-constexpr std::unique_ptr<T> &&move(msl::not_null_unique_ptr<T> &ptr) {
-    return std::move(ptr);
+template <typename T>
+constexpr typename std::remove_reference<std::unique_ptr<T>>::type &&move(
+    msl::not_null_unique_ptr<T> &value) noexcept {
+    return static_cast<
+        typename std::remove_reference<std::unique_ptr<T>>::type &&>(value);
 }
 
 } // namespace std
