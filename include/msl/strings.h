@@ -20,6 +20,37 @@ bool ends_with(const std::string &stack, const std::string &needle) {
            std::string::npos;
 }
 
+//! Replace the first occurence of a string (needle) to another (replacement) in
+//! a bigger string (stack)
+//! @returns the string with replaced values
+//!
+//! If you do not wish to copy a large string, use std::move with the first
+//! argument:
+//! str = replace(std::move(str), "hello", "there");
+std::string replace(std::string stack,
+                    const std::string &needle,
+                    const std::string &replacement) {
+    auto f = stack.find(needle);
+    if (f != std::string::npos) {
+        stack.replace(stack.begin() + static_cast<ptrdiff_t>(f),
+                      stack.begin() + static_cast<ptrdiff_t>(f + needle.size()),
+                      replacement);
+    }
+    return stack;
+}
+
+std::string replace_all(std::string stack,
+                        const std::string &needle,
+                        const std::string &replacement) {
+    size_t f = std::string::npos;
+    while ((f = stack.find(needle)) != std::string::npos) {
+        stack.replace(stack.begin() + static_cast<ptrdiff_t>(f),
+                      stack.begin() + static_cast<ptrdiff_t>(f + needle.size()),
+                      replacement);
+    }
+    return stack;
+}
+
 } // namespace msl
 
 #endif // MSL_STRINGS_H
