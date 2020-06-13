@@ -1,11 +1,11 @@
-#ifndef RANGE_H
-#define RANGE_H
+#ifndef MSL_RANGE_H
+#define MSL_RANGE_H
 
 #include <cstddef>
 
 namespace msl {
 
-//! Waiting for std::views::ita...
+//! Waiting for std::views::iota...
 class range {
 public:
     typedef size_t T;
@@ -60,4 +60,4 @@ private:
 
 } // namespace msl
 
-#endif // RANGE_H
+#endif // MSL_RANGE_H

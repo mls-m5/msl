@@ -1,7 +1,15 @@
 
-config += debug
+config +=
+   debug
+   Wall
+   Wpedantic
 
-includes += ../include .
+includes +=
+   .
+   ../include
 
 not_null_unique_ptr_test.src = %.cpp
+
 range_test.src = %.cpp
+
+strings_test.src = %.cpp
